@@ -28,8 +28,8 @@ class Populator extends Component {
     const { pets } = this.state;
     pets.map((pet, key) => console.log(pet));
     return (
-      <GridContainer container>
-        <div>
+      <div>
+        <GridContainer container>
           {pets.map((pet, key) => (
             <GridItem item xs={12} sm={6} md={3}>
               <PetItem
@@ -41,8 +41,8 @@ class Populator extends Component {
               />
             </GridItem>
           ))}
-        </div>
-      </GridContainer>
+        </GridContainer>
+      </div>
     );
   }
 }
