@@ -8,26 +8,28 @@ import GridItem from "./Grid/GridItem.jsx";
 import GridContainer from "./Grid/GridContainer.jsx";
 //import { CardActions } from "material-ui";
 
-class PropertyItem extends React.Component {
+class PetItem extends React.Component {
   render() {
     return (
-      <div onClick={this.props.onClick}>
+      <div>
         <GridContainer>
           <GridItem xs={12} sm={6} md={3}>
             <Card>
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  image={require(`../images/${this.props.imagePath}`)}
-                  style={this.props.style}
+                  image={this.props.image}
+                  height="100%"
+                  width="100%"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    {this.props.name}
+                    {this.props.name}, {this.props.age}
                   </Typography>
-                  <Typography component="p">
-                    {this.props.description}
+                  <Typography gutterBottom variant="subtitle1" component="h6">
+                    {this.props.phone}
                   </Typography>
+                  <Typography component="p">{this.props.about}</Typography>
                 </CardContent>
               </CardActionArea>
             </Card>
@@ -38,4 +40,4 @@ class PropertyItem extends React.Component {
   }
 }
 
-export { PropertyItem as default };
+export { PetItem as default };

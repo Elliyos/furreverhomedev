@@ -11,22 +11,19 @@ var config = {
 };
 firebase.initializeApp(config);
 
+const db = firebase.firestore();
+
 export const pushToFirebase = (reference, object) => {
-  const ref = firebase.database().ref(reference);
+  const ref = db.ref(reference);
   ref.push(object);
 };
 
-export const pullFromFirebase = (reference, callback) => {
-  const ref = firebase.database().ref(reference);
-  ref.on(
-    "value",
-    snapshot => {
-      callback(snapshot);
-    },
-    function(errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    }
-  );
+export const pullFromFirebase = (collection, callback) => {
+  db.collection(collection)
+    .get()
+    .then(function(querySnapshot) {
+      callback(querySnapshot);
+    });
 };
 
 export default firebase;

@@ -9,16 +9,11 @@ import logo from "./images/logo.png";
 // import GridContainer from "./components/Grid/GridContainer.jsx";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
-import Modal from "./components/ModalInfo";
 import Populator from "./components/Populator";
 
 const style = {
   text: {
     textAlign: "center"
-  },
-  mainConatinerStyle: {
-    flexDirection: "column",
-    flex: 1
   },
   floatingMenuButtonStyle: {
     alignSelf: "flex-end",
@@ -34,33 +29,18 @@ class App extends Component {
     this.state = { open: false }; // <- set up react state
   }
 
-  handleOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
   render() {
     return (
-      <React.Fragment>
+      <div>
         <center>
           <img src={logo} alt="logo" width="100" height="100" border="0" />
           <div style={style.text}>
             <h1>furrever homes</h1>
-            <p onClick={e => console.log(e)}>
-              The best place to find a PAWsome new pal.
-            </p>
-          </div>
-          <div>
-            <Populator />
+            <p>The best place to find a PAWsome new pal.</p>
           </div>
         </center>
-        <div>
-          <ModalInfo open={this.state.open} handleClose={this.handleClose} />
-        </div>
-        <div>
+        <Populator />
+        {/* <div>
           <Fab
             color="primary"
             aria-label="Add"
@@ -68,8 +48,8 @@ class App extends Component {
           >
             <AddIcon />
           </Fab>
-        </div>
-      </React.Fragment>
+        </div> */}
+      </div>
     );
   }
 }
