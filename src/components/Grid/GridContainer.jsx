@@ -5,15 +5,15 @@ import Grid from "@material-ui/core/Grid";
 
 const style = {
   grid: {
-    margin: "10 -10px !important",
-    width: "unset"
+    margin: "auto",
+    direction: "row"
   }
 };
 
 function GridContainer(props) {
   const { classes, children, ...rest } = props;
   return (
-    <Grid container {...rest} className={classes.grid}>
+    <Grid container {...rest} direction={"row"} className={classes.grid}>
       {children}
     </Grid>
   );

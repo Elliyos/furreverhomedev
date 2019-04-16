@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PetItem from "../components/PetItem";
+import GridContainer from "../components/Grid/GridContainer";
+import GridItem from "../components/Grid/GridItem";
 
 import { pullFromFirebase } from "../firebase";
 
@@ -23,21 +25,24 @@ class Populator extends Component {
   }
 
   render() {
-    const { classes } = this.props;
     const { pets } = this.state;
     pets.map((pet, key) => console.log(pet));
     return (
-      <div>
-        {pets.map((pet, key) => (
-          <PetItem
-            image={pet.pic}
-            name={pet.name}
-            about={pet.about}
-            phone={pet.phone}
-            age={pet.age}
-          />
-        ))}
-      </div>
+      <GridContainer container>
+        <div>
+          {pets.map((pet, key) => (
+            <GridItem item xs={12} sm={6} md={3}>
+              <PetItem
+                image={pet.pic}
+                name={pet.name}
+                about={pet.about}
+                phone={pet.phone}
+                age={pet.age}
+              />
+            </GridItem>
+          ))}
+        </div>
+      </GridContainer>
     );
   }
 }

@@ -7,19 +7,13 @@ import logo from "./images/logo.png";
 // import Typography from "@material-ui/core/Typography";
 // import GridItem from "./components/Grid/GridItem.jsx";
 // import GridContainer from "./components/Grid/GridContainer.jsx";
-import AddIcon from "@material-ui/icons/Add";
-import Fab from "@material-ui/core/Fab";
+// import AddIcon from "@material-ui/icons/Add";
+// import Fab from "@material-ui/core/Fab";
 import Populator from "./components/Populator";
 
 const style = {
   text: {
     textAlign: "center"
-  },
-  floatingMenuButtonStyle: {
-    alignSelf: "flex-end",
-    position: "absolute",
-    bottom: 10,
-    right: 10
   }
 };
 
@@ -44,15 +38,6 @@ class App extends Component {
           </div>
         </center>
         <Populator />
-        {/* <div>
-          <Fab
-            color="primary"
-            aria-label="Add"
-            style={style.floatingMenuButtonStyle}
-          >
-            <AddIcon />
-          </Fab>
-        </div> */}
       </div>
     );
   }
