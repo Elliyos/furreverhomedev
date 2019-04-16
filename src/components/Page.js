@@ -19,7 +19,7 @@ class Page extends React.Component {
     return (
       <div className={classes.topper}>
         <Grid container justify="center" alignItems="stretch">
-          <Grid item xs className={classes.root}>
+          <Grid className={classes.root}>
             {children}
             <Footer />
           </Grid>

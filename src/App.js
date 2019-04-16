@@ -37,6 +37,10 @@ class App extends Component {
           <div style={style.text}>
             <h1>furrever homes</h1>
             <p>The best place to find a PAWsome new pal.</p>
+            <p>
+              eMail staff <a href="mailto:kylemccaw15@augustana.edu">here</a>{" "}
+              with pet info to list!
+            </p>
           </div>
         </center>
         <Populator />

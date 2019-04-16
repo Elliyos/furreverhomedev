@@ -30,13 +30,11 @@ class Populator extends Component {
       <div>
         {pets.map((pet, key) => (
           <PetItem
-            key={key}
             image={pet.pic}
             name={pet.name}
             about={pet.about}
             phone={pet.phone}
             age={pet.age}
-            classes={classes}
           />
         ))}
       </div>
